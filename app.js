@@ -12,7 +12,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.listen(4000, () => 
+app.listen(process.env.PORT, () => 
 {
     console.log("Web Server is running");
 });
