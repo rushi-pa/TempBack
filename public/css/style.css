@@ -1,0 +1,287 @@
+
+
+
+/* Form */
+
+.body2{
+  background: url('/img/loginBackground.jpg') no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size:  auto;
+}
+
+form{
+  background: #fff;
+  position: absolute;
+  top: 16vh;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #000;
+}
+
+.jumbotron {
+  color: black;
+  background-image: url('/img/homeCover.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+.shadow{
+  box-shadow: 0px 0px 10px 0px #000;
+}
+.card-deck .card{
+  display:flexbox;
+  flex-wrap: wrap;
+}
+.card-deck .card .fliper{
+  display:flex;
+  flex-wrap: wrap;
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  border: 1px solid #413c3c;
+  perspective: 1000px;
+  }
+
+  .card-deck .card .fliper .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+ transform-style: preserve-3d;
+  }
+
+  .fliper:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+  }
+  .flip-card-front, .flip-card-back {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+  }
+
+  .flip-card-front {
+    position : relative;
+    background-color: #bbb;
+    color: rgb(197, 62, 62);
+    -webkit-backface-visibility: hidden;
+   backface-visibility : initial;
+  }
+
+  .flip-card-back {
+    position :relative;
+    background-color: rgb(6, 39, 71);
+    color: rgb(202, 71, 71);
+    transform: rotateY(180deg);
+  }
+  .flip-card-back a{
+    position : relative;
+    -webkit-backface-visibility: hidden;
+    backface-visibility : initial;
+  }
+.card-deck .card img{
+  min-width: auto;
+  max-width: auto;
+  min-height: auto;
+  max-height: auto;
+  display: flex;
+}
+.card-deck .fliper .flip-card-inner .flip-card-front img{
+  min-width :200px;
+  min-height:200px;
+}
+.site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+  width :100%;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+/*copied to make mobile responsive*/
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+/*only this much*/
+HTML CSSResult
+EDIT ON
+html {
+  background: #f5f7f8;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding: 20px 0;
+}
+
+.band {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display :flex;
+  flex-wrap: wrap;
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+
+}
+
+@media only screen and (min-width: 500px) {
+  .band {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .band {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* card */
+
+.card {
+  min-height: 100%;
+  background: rgb(223, 78, 78);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: rgb(218, 21, 113);
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+
+}
+
+.card:hover {
+  top: -2px;
+  box-shadow: 0 5px 7px rgba(0,0,0,0.2);
+
+  color: orange;
+}
+
+.card article {
+  padding: 20px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+.card .thumb {
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.card p {
+  flex: 1; /* make p grow to fill available space*/
+  line-height: 1.4;
+}
+
+/* typography */
+h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.card span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 2em 0 0 0;
+}
+
+.error{
+  color : red;
+}
