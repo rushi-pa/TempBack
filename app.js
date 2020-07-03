@@ -55,7 +55,7 @@ app.post('/log',(req,res)=>
                 mail = "This field cannot be empty";
     }  
     else{
-    let regular_expression = /^[A-Za-z](?=.\d)(?=.[A-Z]){6,}/;
+    let regular_expression = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if(req.body.Password == "")
     {
         pass = "Enter Password";
@@ -70,8 +70,6 @@ app.post('/log',(req,res)=>
     {
         res.render("login",
         {
-            Email : TempMail,
-            Password :TempPass,
             title: "Error in submission",
             mError: mail,
             pError: pass
@@ -105,7 +103,7 @@ app.post('/send',(req,res)=>
             } 
    
 
-    let regular_expression = /^[A-Za-z](?=.\d)(?=.[A-Z]){6,}/;
+    let regular_expression = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
     if(req.body.Password == "")
     {
