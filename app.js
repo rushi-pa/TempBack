@@ -12,7 +12,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.listen(process.env.PORT, () => 
+app.listen(4000, () => 
 {
     console.log("Web Server is running");
 });
@@ -158,8 +158,14 @@ app.post('/send',(req,res)=>
           console.log('Email sent: ' + info.response);
         }
     });
-    res.render("login",{
-        title: "Login"
+    res.render("welcome",{
+        title: "Welcome"
     });
     }
+});
+app.get("/welcome", (req,res) => 
+{
+    res.render("welcome",{
+        title: "Congrats"
+    });  
 });
