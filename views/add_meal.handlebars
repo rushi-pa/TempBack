@@ -1,0 +1,40 @@
+<div class="body2">
+<section class="container-fluid">
+    <section class="row justify-content-center">
+        <section class="col 12 col-sm-6 col-md-3">
+
+            <form method="POST" action="store/meal/package" id="form-css" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label>Meal package name</label>
+                  <input type="text" class="form-control" id="name" name ="name">
+                  <div class = "error">{{this.fError}}</div>
+                  <br/>
+                  <label>price</label>
+                  <input type="text" class="form-control" id="price" name ="price">
+                  <br/>
+                  <div class = "error">{{this.lError}}</div>
+                  <label>Description</label>
+                  <input type="text" class="form-control" id="desc" name ="desc">
+                  <small id="emailHelp" class="form-text text-muted"></small>
+                  <div class = "error">{{this.mError}}</div>
+                  <label>Category</label>
+                  <input type="text" class="form-control" id="cate" name ="cate">
+                  <div class = "error">{{this.pError}}</div>
+                  <label>Number of Meals</label>
+
+                  <input type="number" class="form-control" id="number" name ="number">
+                  <div class = "error">{{this.pError}}</div>
+                  <label for="highlight"><b>Meal Pack Image</b></label>
+        <input type="file" name="mealImage" required accept=".gif,.jpg,.jpeg,.png">
+        <br>
+        
+                </div>
+                <button type="submit" class="registerbtn">Create Meal Pack</button>
+            </form>
+        </section>
+    </section>
+</section>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
