@@ -30,17 +30,6 @@ app.set('view engine', 'handlebars');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
-// app.use(function (req, res, next) {
-//     next(createError(404));
-//   });
-//   app.use(function (err, req, res, next) {
-//      console.log(err);
-//     res.locals.message = err.message;
-//     res.locals.error = req.app.get('env') === 'development' ? err : {};
-//     res.status(err.status || 500);
-//     res.render('/');
-//   })
   app.use(clientSessions({
     cookieName: "session", // this is the object name that will be added to 'req'
     secret: "week10example_web322", // this should be a long un-guessable string.
@@ -136,16 +125,13 @@ const MealPost = require('./database/models/Meal');
 const Meal = require("./database/models/Meal");
 
 
-app.listen(process.env.PORT, () =>
+app.listen(4000, () =>
 {
     console.log("Web Server is running");
 });
 function onHttpStart() {
     console.log("Express http server listening on: ");
   }
-// CREATE CONNECTION
-
-
 
 app.get("/", (req,res) => 
 {
@@ -167,13 +153,22 @@ app.get("/ourdishes", (req,res) =>
         title: "Our Dishes"
     });
 });
-app.get("/view_product", (req,res) => 
-{
-    res.render("view_product",{
-        title: "Our Dishes"
+app.get('/view_product', (req, res) => {  
+    MealPost.findOne({ name: req.query.name }, function (err, docs3) {
+      if (err)
+        res.json(err)
+      else {
+        res.render("view_product", {
+          title: "Meal Package",
+          name: docs3.name,
+          price: docs3.price,
+          desc: docs3.desc,
+          number: docs3.number,
+        });
+      }
     });
-});
-app.get("/deleteMeal",(req,res) =>
+  })
+app.get("/deleteMeal",ensureAdmin,(req,res) =>
 {
     res.render("deleteMeal",{
         title: "Delete"
@@ -204,7 +199,7 @@ app.post("/delete",ensureAdmin,(req,res) =>
         });
     }
 });
-app.get("/editMealPackage",(req,res) =>
+app.get("/editMealPackage",ensureAdmin,(req,res) =>
 {
     res.render("editMealPackage",{
         title: "Delete"

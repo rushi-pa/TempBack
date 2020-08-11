@@ -5,7 +5,14 @@
         -webkit-appearance: none;
         margin: 0;
     }
-
+    .column{
+        align-items: center;
+        display: center;
+    }
+    h3{
+        align-items: center;
+    }
+    
     /* Firefox */
     input[type=number] {
         -moz-appearance: textfield;
@@ -13,30 +20,28 @@
 </style>
 
 <div class="row">
-    <div class="column">
-        <img src="data:image/{{meal.mealImage.contentType}};base64,{{meal.mealImage.data}}" width="200px"
+    {{!-- <div class="column">
+        <img src="data:image/{{this.mealImage.contentType}};base64,{{this.mealImage.data}}" width="200px"
             height="200px">
-    </div>
+    </div> --}}
     <div class="column" style="margin-top: 80px;">
-        <h3>Name: {{meal.name}}</h3>
-        <h3>Description: {{meal.description}}</h3>
-        <h3>Price: {{meal.price}}</h3>
-        <h3>No. of Meals:{{meal.mealCount}}</h3>
-        {{#if (eq user.role "customer")}}
-        <form action="/addtocart/{{meal._id}}" method="POST">
+        <h3>     Name: {{this.name}}</h3>
+        <h3>     Description: {{this.desc}}</h3>
+        <h3>     Price: {{this.price}}</h3>
+        <h3>     No. of Meals:{{this.number}}</h3>
+        
+        {{!-- <form action="/addtocart/{{meal._id}}" method="POST">
             <div class="row">
                 <a class="btn" onclick="decrement()">-</a>
-                {{#if available_product.quantity}}
                 <input type="number" name="quantity" id="quantity" min="1" style="margin-top:20px;width:5rem"
-                    value="{{available_product.quantity}}">
-                {{else}}
+                    >
+                
                 <input type="number" name="quantity" id="quantity" min="1" style="margin-top:20px;width:5rem" value="1">
-                {{/if}}
+
                 <a class="btn" onclick="increment()">+</a>
             </div>
             <button class="btn">Add to Cart</button>
-        </form>
-        {{/if}}
+        </form> --}}
     </div>
 </div>
 

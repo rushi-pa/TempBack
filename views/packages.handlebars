@@ -107,16 +107,16 @@
         <img src="data:image/{{this.mealImage.contentType}};base64,{{this.mealImage.data}}">
         <b>
           <center>{{this.name}}</center>
-          
+
         </b>
         <br>
         category: {{this.cate}} <br>
         Meal Count: {{this.number}} <br>
         Price: {{this.price}} <br><br>
-        <a href="/view_product" class="btn btn-primary">Edit Meal Package</a>
+        <a href="/view_product?name={{name}}" class="btn btn-primary">Description</a>
         {{#if (eq ../user.role "clerk")}}
-        <a href="/edit/meal/package/{{this._id}}" class="btn btn-primary">Edit</a>
-        <a href="/delete/meal/package/{{this._id}}" class="btn btn-primary">Delete</a>
+        <a href="/edit/meal/package/{{this._id}} class="btn btn-primary">Edit</a>
+        <a href="/delete/meal/package/{{this._id}} class="btn btn-primary">Delete</a>
         {{/if}}
       </div>
     </a>
