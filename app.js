@@ -10,6 +10,7 @@ var cookieParser = require('cookie-parser');
 const flash = require('express-flash');
 const fileUpload = require("express-fileupload");
 const hbs = require('express-handlebars');
+
 const clientSessions = require("client-sessions");
 const fs = require('fs');
 const multer = require('multer');
@@ -22,6 +23,7 @@ const saltRounds = 10;
 const myPlaintextPassword = 's0/\/\P4$$w0rD';
 const someOtherPlaintextPassword = 'not_bacon';
 const UsrModel = require('./database/models/User');
+
 var mongoose = require("mongoose");
 var controller = require('controller');
 const auth = require("./middleware/auth");
@@ -30,7 +32,8 @@ app.set('view engine', 'handlebars');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-  app.use(clientSessions({
+
+app.use(clientSessions({
     cookieName: "session", // this is the object name that will be added to 'req'
     secret: "week10example_web322", // this should be a long un-guessable string.
     duration: 2 * 60 * 1000, // duration of the session in milliseconds (2 minutes)
@@ -125,7 +128,7 @@ const MealPost = require('./database/models/Meal');
 const Meal = require("./database/models/Meal");
 
 
-app.listen(4000, () =>
+app.listen(process.env.PORT, () =>
 {
     console.log("Web Server is running");
 });
